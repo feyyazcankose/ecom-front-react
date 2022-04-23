@@ -4,10 +4,9 @@ import { Route, Routes } from 'react-router-dom';
 
 import MasterPage from './layouts/MasterPage';
 import  axios  from 'axios';
-import './assets/css/style.css';
-import './assets/css/slick.css';
-import './assets/css/bootstrap.min.css';
-import './assets/css/font-awesome.min.css';
+import './index.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+
 
 
 axios.defaults.baseURL="http://127.0.0.1:8000/";
