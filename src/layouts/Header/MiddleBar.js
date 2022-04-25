@@ -1,8 +1,35 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 const MiddleBar = () => {
+  const [basket, setbasket] = useState([]);
+
+  useEffect(() => {
+
+    async function get(){
+      await axios.get("api/basket").then((res)=>{
+          if(res.status === 200){
+            setbasket(res.data.baskets);
+          }
+      });
+
+
+    
+    }
+    get();
+
+    return () => {
+      setbasket([]);
+    };
+  }, []);
+
+
+
+
+
+
   return (
-    <div className="header-middle">
+   <div className="header-middle">
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-3 col-md-3 col-7">

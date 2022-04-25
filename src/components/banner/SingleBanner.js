@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Catagory = () => {
+const Catagory = ({backgroundImageURL}) => {
   return (
-    <div className="single-banner" style={{backgroundImage:'url(https://via.placeholder.com/620x340)'}}>
+    <div className="single-banner" style={{backgroundImage:`url(${backgroundImageURL})`}}>
                         <div className="content">
                             <h2>Smart Watch 2.0</h2>
                             <p>Space Gray Aluminum Case with <br/>Black/Volt Real Sport Band </p>

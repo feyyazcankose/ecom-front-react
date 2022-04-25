@@ -1,30 +1,24 @@
 import React from 'react'
 
-const SingleCard = () => {
+const SingleCard = ({product,addBasket}) => {
+    console.log(product);
   return (
 
                     <div className="single-product">
                         <div className="product-image">
-                            <img src="https://via.placeholder.com/335x335" alt="#"/>
+                            <img src={"http://127.0.0.1:8000/"+product.path} alt="#"/>
                             <div className="button">
-                                <a href="product-details.html" className="btn"><i className="lni lni-cart"></i> Add to Cart</a>
+                                <button type="button" value={product.id} onClick={addBasket} className="btn"><i className="lni lni-cart"></i>Sepete Ekle</button>
                             </div>
                         </div>
                         <div className="product-info">
-                            <span className="category">Watches</span>
+                            <span className="category">{product.get_category.title}</span>
                             <h4 className="title">
-                                <a href="product-grids.html">Xiaomi Mi Band 5</a>
+                                <a href="product-grids.html">{product.title}</a>
                             </h4>
-                            <ul className="review">
-                                <li><i className="lni lni-star-filled"></i></li>
-                                <li><i className="lni lni-star-filled"></i></li>
-                                <li><i className="lni lni-star-filled"></i></li>
-                                <li><i className="lni lni-star-filled"></i></li>
-                                <li><i className="lni lni-star"></i></li>
-                                <li><span>4.0 Review(s)</span></li>
-                            </ul>
+                            
                             <div className="price">
-                                <span>$199.00</span>
+                                <span>₺{product.price}</span>
                             </div>
                         </div>
                     </div>
